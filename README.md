@@ -29,3 +29,81 @@
 <p class="has-line-data" data-line-start="34" data-line-end="35">Install the library as,</p>
 <pre><code class="has-line-data" data-line-start="36" data-line-end="38" class="language-python">pip3 install pymongo[srv]
 </code></pre>
+<p class="has-line-data" data-line-start="0" data-line-end="1"><em>MongoDB stores data in documents.</em></p>
+<table class="table table-striped table-bordered">
+<thead>
+<tr>
+<th>Relational Concept</th>
+<th>MongoDB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database</td>
+<td>Database</td>
+</tr>
+<tr>
+<td>Tables</td>
+<td>Collection</td>
+</tr>
+<tr>
+<td>Rows</td>
+<td>Documents</td>
+</tr>
+<tr>
+<td>Index</td>
+<td>Index</td>
+</tr>
+</tbody>
+</table>
+<h3 class="code-line" data-line-start=9 data-line-end=10 ><a id="Performing_basic_operations_using_PyMongo_9"></a>Performing basic operations using PyMongo</h3>
+<ul>
+<li class="has-line-data" data-line-start="11" data-line-end="12">
+<h5 class="code-line" data-line-start=11 data-line-end=12 ><a id="Establising_a_secure_connection_11"></a>Establising a secure connection.</h5>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="12" data-line-end="13">To establish a connection to MongoDB with PyMongo you use the MongoClient class.</p>
+<pre><code class="has-line-data" data-line-start="15" data-line-end="18" class="language-python">from pymongo import MongoClient
+client = MongoClient('&lt;URL&gt;’)
+</code></pre>
+<p class="has-line-data" data-line-start="19" data-line-end="20">Create a Database, and then attach the url above in ‘&lt;URL&gt;’. This will check for the username and the password required to access the database and establish a connection to the server.</p>
+<ul>
+<li class="has-line-data" data-line-start="21" data-line-end="22">
+<h5 class="code-line" data-line-start=21 data-line-end=22 ><a id="Adding_data_to_the_database_21"></a>Adding data to the database.</h5>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="22" data-line-end="24">A record in MongoDB is a document, which is a data structure composed of field and value pairs.<br>
+Construct tuples in python to access key-value pairs.</p>
+<pre><code class="has-line-data" data-line-start="26" data-line-end="34" class="language-python">kv1 = {<span class="hljs-string">"key1"</span>: value1, <span class="hljs-string">"key2"</span>: value2}
+kv2 = {<span class="hljs-string">"key1"</span>: value3, <span class="hljs-string">"key2"</span>: value4}
+
+db = client[<span class="hljs-string">"&lt;database&gt;"</span>]
+collection = db[<span class="hljs-string">"&lt;database&gt;"</span>]
+
+collection.insert_many([kv1, kv2])
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="35" data-line-end="36">
+<h5 class="code-line" data-line-start=35 data-line-end=36 ><a id="Accessing_elements_from_database_35"></a>Accessing elements from database.</h5>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="36" data-line-end="37">Elements can be accessed by finding them all and iterating through them.</p>
+<pre><code class="has-line-data" data-line-start="39" data-line-end="44" class="language-python">result = collection.find({})
+
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> result:
+    i[<span class="hljs-string">"key1"</span>]
+</code></pre>
+<ul>
+<li class="has-line-data" data-line-start="45" data-line-end="46">
+<h5 class="code-line" data-line-start=45 data-line-end=46 ><a id="Deleting_a_document_from_the_database_45"></a>Deleting a document from the database.</h5>
+</li>
+</ul>
+<p class="has-line-data" data-line-start="46" data-line-end="47">Elements can be deleted by accessing <code>delete_many</code> method from <code>collection</code> object.</p>
+<pre><code class="has-line-data" data-line-start="49" data-line-end="51" class="language-python">collection.delete_one({<span class="hljs-string">"key1"</span>: &lt;value&gt;})
+</code></pre>
+<p class="has-line-data" data-line-start="52" data-line-end="54">This block of code deletes the document with that key value pair.<br>
+We can even delete multiple documnets at-once by specifying more arguments.</p>
+<h4 class="code-line" data-line-start=55 data-line-end=56 ><a id="These_are_the_basic_operations_55"></a>These are the basic operations</h4>
+<br>
+<p class="has-line-data" data-line-start="57" data-line-end="59">MongoDB can be done in many laguages.<br>
+See <a href="https://docs.mongodb.com/manual/">MongoDB Documentation</a></p>
