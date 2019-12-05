@@ -89,9 +89,8 @@ collection.insert_many([kv1, kv2])
 </ul>
 <p class="has-line-data" data-line-start="36" data-line-end="37">Elements can be accessed by finding them all and iterating through them.</p>
 <pre><code class="has-line-data" data-line-start="39" data-line-end="44" class="language-python">result = collection.find({})
-
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> result:
-    i[<span class="hljs-string">"key1"</span>]
+for i in result:
+    i["key1"]
 </code></pre>
 <ul>
 <li class="has-line-data" data-line-start="45" data-line-end="46">
