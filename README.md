@@ -16,19 +16,28 @@
 </ul>
 <h3 class="code-line" data-line-start=18 data-line-end=19 ><a id="Installation_18"></a>Installation</h3>
 <p class="has-line-data" data-line-start="20" data-line-end="21">If you are on a windows operating system, enter the following command in cmd.</p>
-<pre><code class="has-line-data" data-line-start="22" data-line-end="24" class="language-python">python -m pip install pymongo
-</code></pre>
+
+```python
+python -m pip install pymongo
+```
+
 <p class="has-line-data" data-line-start="25" data-line-end="26">If you use a terminnal, then,</p>
-<pre><code class="has-line-data" data-line-start="27" data-line-end="29" class="language-python">sudo apt install python3-pip
-</code></pre>
+
+```python
+sudo apt install python3-pip
+```
+
 <p class="has-line-data" data-line-start="29" data-line-end="30">After executing, the installation shall be successful.</p>
 <blockquote>
 <p class="has-line-data" data-line-start="31" data-line-end="33">After importing the <code>MongoClient</code> library and creating a database, an error might show up.<br>
 <code>dnspython module must be installed to use mongodb+srv:// URI</code></p>
 </blockquote>
 <p class="has-line-data" data-line-start="34" data-line-end="35">Install the library as,</p>
-<pre><code class="has-line-data" data-line-start="36" data-line-end="38" class="language-python">pip3 install pymongo[srv]
-</code></pre>
+
+```python
+pip3 install pymongo[srv]
+```
+
 <p class="has-line-data" data-line-start="0" data-line-end="1"><em>MongoDB stores data in documents.</em></p>
 <table class="table table-striped table-bordered">
 <thead>
