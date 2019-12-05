@@ -77,8 +77,8 @@ Construct tuples in python to access key-value pairs.</p>
 <pre><code class="has-line-data" data-line-start="26" data-line-end="34" class="language-python">kv1 = {<span class="hljs-string">"key1"</span>: value1, <span class="hljs-string">"key2"</span>: value2}
 kv2 = {<span class="hljs-string">"key1"</span>: value3, <span class="hljs-string">"key2"</span>: value4}
 
-db = client[<span class="hljs-string">"&lt;database&gt;"</span>]
-collection = db[<span class="hljs-string">"&lt;database&gt;"</span>]
+db = client["&lt;database&gt;"]
+collection = db["&lt;database&gt;"]
 
 collection.insert_many([kv1, kv2])
 </code></pre>
